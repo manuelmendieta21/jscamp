@@ -1,6 +1,6 @@
 
-export function Cabecera(){
-    return(
+export function Cabecera() {
+    return (
         <div className="cabecera">
             <header>
                 <h1 className="logo">
@@ -17,11 +17,11 @@ export function Cabecera(){
                     <a href="#">Empleos</a>
                 </nav>
 
-                <div className="header-buttons">
+                <div className="btn_Header">
                     <a href="#" className="btn-secondary">Publicar un empleo</a>
                     <a href="#" className="btn-primary">Iniciar sesión</a>
                 </div>
-            </header>   
+            </header>
         </div>
     )
 }
