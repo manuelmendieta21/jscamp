@@ -1,16 +1,42 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Creado con Vite para iniciar un proyecto de React con Vite.
+Trabajaremos en los componentes y paginas de manera incremental.
 
-Currently, two official plugins are available:
+## Componentes 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Header
+- Menu
+- Footer
+- Jobs
+- Pagination
+- Search
 
-## React Compiler
+## Paginas
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- Inicio
+- Empleos
 
-## Expanding the ESLint configuration
+## Comandos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- npm run dev
+- npm run build
+- npm run preview
+
+##Logica de negocio
+
+- Pagination 
+```
+Controlar la paginacion mediante currenPage y totalPages valor de las paginas
+export function Pagination({ currenPage = 2, totalPages = 10 }) {
+    //Generar un array de paginas a mostrar 
+    const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+    //Logica para mostrar o no los botones de paginacion
+    const isFirstPage = currenPage === 1;
+    const isLastPage = currenPage === totalPages;
+
+    const stylePrevButton = isFirstPage ? { pointerEvents: 'none', opacity: 0.6 } : {};
+    const styleNextButton = isLastPage ? { pointerEvents: 'none', opacity: 0.6 } : {};
+```
+
