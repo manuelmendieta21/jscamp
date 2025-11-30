@@ -1,10 +1,9 @@
-
+import backgroundFoto from "./images/background.webp"
 export function Menu() {
     return (
         <main>
             <section>
-                <img src="https://pymstatic.com/115717/conversions/ventajas-trabajo-en-equipo-default.jpg
-                " width="200" />
+                <img src={backgroundFoto} />
 
                 <h1>Encuentra el trabajo de tus sueños</h1>
                 <p>Únete a la comunidad más grande de desarrolladores y encuentra tu próxima oportunidad.</p>

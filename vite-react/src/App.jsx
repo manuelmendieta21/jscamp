@@ -2,17 +2,19 @@
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import './App.css'
-import { Cabecera } from './components/Header'
-import { Menu } from './components/menu'
-
+//import { Cabecera } from './components/Header.jsx'
+//import { Menu } from './components/Menu.jsx'
+import { Routes, Route } from "react-router-dom";
+import Inicio from "./pages/Inicio.jsx";
+import Empleos from "./pages/Empleos.jsx";
 
 function App() {
   return (
-    <>
-      <Cabecera />
-      <Menu />
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Inicio />} />
+      <Route path="/empleos" element={<Empleos />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

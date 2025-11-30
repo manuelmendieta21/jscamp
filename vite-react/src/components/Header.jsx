@@ -13,8 +13,8 @@ export function Cabecera() {
                 </h1>
 
                 <nav className="navigation">
-                    <a href="#">Inicio</a>
-                    <a href="#">Empleos</a>
+                    <a href="./index.html">Inicio</a>
+                    <a href="./empleos.html">Empleos</a>
                 </nav>
 
                 <div className="btn_Header">
