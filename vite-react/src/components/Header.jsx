@@ -1,5 +1,5 @@
 
-export function Cabecera() {
+export default function Cabecera() {
     return (
         <div className="cabecera">
             <header>
@@ -13,8 +13,8 @@ export function Cabecera() {
                 </h1>
 
                 <nav className="navigation">
-                    <a href="./index.html">Inicio</a>
-                    <a href="./empleos.html">Empleos</a>
+                    <a href="./">Inicio</a>
+                    <a href="./Empleos">Empleos</a>
                 </nav>
 
                 <div className="btn_Header">
