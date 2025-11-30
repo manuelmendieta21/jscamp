@@ -1,5 +1,7 @@
-//Controlar la paginacion mediante currenPage y totalPages valor de las paginas
-export function Pagination({ currenPage = 2, totalPages = 10 }) {
+//Controlar la paginacion mediante currenPage y totalPages valor de las paginas 
+//onPageChange es una funcion que se ejecuta cuando se hace click en un boton de paginacion
+
+export function Pagination({ currenPage = 5, totalPages = 10, onPageChange }) {
     //Generar un array de paginas a mostrar 
     const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
@@ -10,13 +12,37 @@ export function Pagination({ currenPage = 2, totalPages = 10 }) {
     const stylePrevButton = isFirstPage ? { pointerEvents: 'none', opacity: 0.6 } : {};
     const styleNextButton = isLastPage ? { pointerEvents: 'none', opacity: 0.6 } : {};
 
+    //Funcion para manejar el evento de click en el boton previo
+    const handlePrevClick = (event) => {
+        event.preventDefault()
+        if (isFirstPage === false) {
+            onPageChange(currenPage - 1)
+        }
+    }
+
+    //Funcion para manejar el evento de click en el boton siguiente
+    const handleNextClick = (event) => {
+        event.preventDefault()
+        if (isLastPage === false) {
+            onPageChange(currenPage + 1)
+        }
+    }
+
+    //handlePageChange
+
+    const handlePageChange = (event, page) => {
+        event.preventDefault()
+        if (page !== currenPage) {
+            onPageChange(page)
+        }
+    }
     return (
         <div>
             <nav className="pagination">
                 {
                     //Renderizado con condicionales
                     !isFirstPage && (
-                        <a href="#" style={stylePrevButton}>
+                        <a href="#" style={stylePrevButton} onClick={handlePrevClick}>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
                                 strokeLinecap="round" strokeLinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -29,14 +55,17 @@ export function Pagination({ currenPage = 2, totalPages = 10 }) {
 
                 {pages.map(page => (
                     <a href="#"
-                        className={currenPage === page ? 'is-active' : ''}>
+                        key={page}
+                        className={currenPage === page ? 'is-active' : ''}
+                        //
+                        onClick={(event) => handlePageChange(event, page)}>
                         {page}
                     </a>
                 ))}
 
                 {
-                    !isLastPage && (
-                        <a href="#" style={styleNextButton}>
+                    isLastPage === false && (
+                        <a href="#" style={styleNextButton} onClick={handleNextClick} >
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
                                 strokeLinecap="round" strokeLinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />

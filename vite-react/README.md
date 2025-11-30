@@ -17,13 +17,13 @@ Trabajaremos en los componentes y paginas de manera incremental.
 - Inicio
 - Empleos
 
-## Comandos
+## Comandos para arrancar el proyecto
 
 - npm run dev
 - npm run build
 - npm run preview
 
-##Logica de negocio
+## Logica de negocio
 
 - Pagination 
 ```
