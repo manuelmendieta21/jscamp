@@ -61,17 +61,6 @@ export default function Jobs() {
                     <span id="filter-selected-value"></span>
                 </section>
 
-                <section>
-                    <h2>Resultados de búsqueda</h2>
-                    <div className="jobs-listings">
-                    </div>
-
-                    <nav className="pagination">
-                    </nav>
-
-                </section>
-
-
             </main>
         </div>
     )

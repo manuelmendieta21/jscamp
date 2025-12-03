@@ -3,6 +3,7 @@
 
 export function Pagination({ currenPage = 5, totalPages = 10, onPageChange }) {
     //Generar un array de paginas a mostrar 
+    console.log('render Pagination')
     const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
     //Logica para mostrar o no los botones de paginacion
@@ -11,6 +12,8 @@ export function Pagination({ currenPage = 5, totalPages = 10, onPageChange }) {
 
     const stylePrevButton = isFirstPage ? { pointerEvents: 'none', opacity: 0.6 } : {};
     const styleNextButton = isLastPage ? { pointerEvents: 'none', opacity: 0.6 } : {};
+
+
 
     //Funcion para manejar el evento de click en el boton previo
     const handlePrevClick = (event) => {

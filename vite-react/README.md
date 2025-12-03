@@ -26,9 +26,11 @@ Trabajaremos en los componentes y paginas de manera incremental.
 ## Logica de Paginacion
 
 - Pagination 
-```
+
 Controlar la paginacion mediante currenPage y totalPages valor de las paginas
-export function Pagination({ currenPage = 2, totalPages = 10 }) {
+export function Pagination({ currenPage = 2, totalPages = 10 })
+```
+
     //Generar un array de paginas a mostrar 
     const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
@@ -52,6 +54,8 @@ export function Pagination({ currenPage = 2, totalPages = 10 }) {
         }
     }
 ```
+lo mismo creamo la funcion handleNextClick que para manejar el evento de click en el boton siguiente escuchando el evento de click preventDefault() sirve para detener ese comportamiento y así poder manejarlo al igual que validamos si la pagina actual es la ultima, si, no es la ultima se ejecuta la funcion onPageChange 
+```
     //Funcion para manejar el evento de click en el boton siguiente
     const handleNextClick = (event) => {
         event.preventDefault()
@@ -60,6 +64,10 @@ export function Pagination({ currenPage = 2, totalPages = 10 }) {
         }
     }
 
+```
+creamos la funcion handlePageChange lo que nos permitira manejar la informacion de la pagina actual callback el primer parametro es el evento y el segundo le pasamos la pagina al momento de iterar los elementos 
+
+```
     //handlePageChange
 
     const handlePageChange = (event, page) => {
@@ -68,5 +76,18 @@ export function Pagination({ currenPage = 2, totalPages = 10 }) {
             onPageChange(page)
         }
     }
+```
+
+otra forma mediante data atribute
+
+```
+    const handlePageChange = (event) => {
+        event.preventDefault()
+        const page = Number(event.target.dataset.page)
+        if (page !== currenPage) {
+            onPageChange(page)
+        }
+    }
+```
 
 ##
