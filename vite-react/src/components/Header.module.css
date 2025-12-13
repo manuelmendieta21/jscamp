@@ -1,0 +1,172 @@
+/* Header */
+/* Definimos la estructura para el Header y definimos cada uno de los componentes por 
+el tamaño del dispositivo y la equivalencia para cambios en todos colores y textos */
+.Cabecera{
+        border-bottom: 1px solid var(--border);
+        background: var(--background);
+    }
+
+.logotipo {
+    color: var(--primary-light);
+}
+
+.btnHeader {
+    text-decoration: aliceblue;
+    color: aliceblue;
+}
+
+
+.tittleLogo{
+    color:#e7eee6f1;
+}
+
+
+/*Desktop responsivo*/
+@media (max-width: 2560px) {
+    .Cabecera{
+        height: 10vh;
+        width: 100%;
+    }
+
+    .Header{
+        margin-left:3rem ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }    
+
+.logotipo {
+    display: flex;
+    font-size: 2rem;
+    gap: 55px;
+    width: 13rem;
+    height: 2.8rem;
+    min-width: 12rem;
+    align-items: center;
+
+}    
+.icon{
+    width:3rem;
+    height:3rem;
+    padding: auto;
+    
+}
+.tittleLogo{
+    font-size: 2rem;
+    
+}
+
+.navigation{
+
+    height: auto;
+    padding: 1.5rem;
+    width: 35rem;
+    display: flex;
+    gap:3rem;
+}
+
+.btnHeader {
+    margin-right: 20px;
+    display: flex;
+    gap: 1rem;
+    }
+
+
+/*componente botton css*/
+.cssbuttons {
+    height: 40px;
+    font-size: 15px;
+    width:10rem;
+    position: relative;
+    cursor: pointer;
+    background: linear-gradient(to right, #48cf79, #1136ee);
+    color: rgb(243, 243, 243);
+    overflow: hidden;
+    }
+
+
+.cssbuttons span {
+    position: relative;
+    transition: color 0.4s;
+    }
+
+.cssbuttons::before,
+.cssbuttons::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    }
+
+.cssbuttons::before {
+    content: "";
+    background: #71c3737c;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+
+.cssbuttons:hover::before {
+    transform: translate3d(100%, 0, 0);
+    }
+
+.cssbuttons:active {
+    transform: scale(0.95);
+    }
+
+
+
+/*Termina el max width 2560px*/
+
+
+/* Mobile responsivo */
+@media (max-width: 768px) {
+.Cabecera {
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+    background: var(--background);
+    background-color: rgb(38, 88, 163);
+}
+
+}
+
+@media (max-width: 480px) {
+
+    .Cabecera{
+        height: 30vh;
+        width: 100%;
+        border-bottom: 1px solid var(--border);
+        background: var(--background);
+        background-color: rgb(61, 224, 216);
+    }
+
+.Header{
+
+    margin-left:3rem ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }    
+
+.logotipo {
+    font-size: 2.5rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+.navigation{
+    width: 35rem;
+    gap:3rem;
+}
+
+
+.btnHeader {
+    gap: 1.5rem;
+}
+
+
+}
+}

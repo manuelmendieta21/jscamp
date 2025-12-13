@@ -1,10 +1,11 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import './App.css'
 import { Routes, Route } from "react-router-dom";
 import Inicio from "./pages/Inicio.jsx";
 import Empleos from "./pages/Empleos.jsx";
+
 
 function App() {
   return (

@@ -1,9 +1,11 @@
+import styles from "./Pagination.module.css"
+
 //Controlar la paginacion mediante currenPage y totalPages valor de las paginas 
 //onPageChange es una funcion que se ejecuta cuando se hace click en un boton de paginacion
 
-export function Pagination({ currenPage = 5, totalPages = 10, onPageChange }) {
+export  function Pagination({ currenPage , totalPages, onPageChange }) {
     //Generar un array de paginas a mostrar 
-    console.log('render Pagination')
+    //visualizar el renderizado por consola console.log('render Pagination')
     const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
     //Logica para mostrar o no los botones de paginacion
@@ -12,8 +14,6 @@ export function Pagination({ currenPage = 5, totalPages = 10, onPageChange }) {
 
     const stylePrevButton = isFirstPage ? { pointerEvents: 'none', opacity: 0.6 } : {};
     const styleNextButton = isLastPage ? { pointerEvents: 'none', opacity: 0.6 } : {};
-
-
 
     //Funcion para manejar el evento de click en el boton previo
     const handlePrevClick = (event) => {
@@ -31,7 +31,7 @@ export function Pagination({ currenPage = 5, totalPages = 10, onPageChange }) {
         }
     }
 
-    //handlePageChange
+    //handlePageChange cambio de paginas muestra la pagina actual cuando itera en pages.map
 
     const handlePageChange = (event, page) => {
         event.preventDefault()
@@ -41,7 +41,8 @@ export function Pagination({ currenPage = 5, totalPages = 10, onPageChange }) {
     }
     return (
         <div>
-            <nav className="pagination">
+            {/*ClassName=paginaton*/}
+            <nav className={styles.pagination}>
                 {
                     //Renderizado con condicionales
                     !isFirstPage && (
@@ -58,8 +59,9 @@ export function Pagination({ currenPage = 5, totalPages = 10, onPageChange }) {
 
                 {pages.map(page => (
                     <a href="#"
+                        
                         key={page}
-                        className={currenPage === page ? 'is-active' : ''}
+                        className={currenPage === page ?  styles.isActive: ''}
                         //
                         onClick={(event) => handlePageChange(event, page)}>
                         {page}
