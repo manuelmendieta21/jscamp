@@ -14,7 +14,7 @@ const RESUL_PER_PAGE = 3;
 export default function Empleos() {
     //Paginacion currentPage controla la pagina actual
     const [currentPage, setCurrentPage] = useState(1);
-    //console.log({currentPage});
+    console.log({currentPage});
     //Controlamos la paginacion calculando los objetos devueltos jobsData con length y lo dividimos por la cantidad elementos que queremos mostrar.
     //aproximamos con Math . Ceil 
     const totalPages = Math.ceil(jobsData.length/RESUL_PER_PAGE);

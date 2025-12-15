@@ -1,0 +1,881 @@
+/*App css*/
+body{
+  font-family: system-ui;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+@media (max-width: 2560px) {
+   body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    background-color: rgb(123, 5, 219);
+}
+
+  }
+
+@media (max-width: 768px) {
+    body {
+
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+  
+}
+}
+
+@media (max-width: 480px) {
+
+  body {
+    height: auto;
+    width: auto;
+    display: flex;
+    
+  }
+}
+
+select {
+  padding: 0.625rem 1.25rem;
+  background-color: #242d3a;
+  border: 0;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.2s;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  padding-right: 2.5rem;
+
+  &:hover {
+    background-color: var(--primary-hover);
+    color: white;
+  }
+
+  &:focus {
+    outline: 2px solid #1173d4;
+    outline-offset: 2px;
+  }
+}
+
+/* Hero */
+main>section:nth-child(1) {
+  height: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+
+  h1 {
+    padding-top: 36px;
+  }
+
+ 
+  &>img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    mask-image: linear-gradient(to bottom, rgba(16, 25, 34, 1) 5%, rgba(16, 25, 34, 0) 80%);
+  }
+}
+
+/* Media queries para hero */
+@media (max-width: 768px) {
+  main>section:nth-child(1) {
+    height: 400px;
+    gap: 1rem;
+
+    h1 {
+      font-size: 2rem;
+      padding-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  main>section:nth-child(1) {
+    height: 300px;
+    gap: 0.75rem;
+
+    h1 {
+      font-size: 1.5rem;
+      padding-top: 10px;
+    }
+  }
+}
+
+/* Formulario de Búsqueda */
+form {
+  max-width: 42rem;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+
+form>div {
+  display: flex;
+  align-items: center;
+  background-color: var(--input-bg);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px var(--shadow);
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+/* Media queries para form */
+@media (max-width: 768px) {
+  form {
+    padding-inline: 0.5rem;
+  }
+
+  form>div {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  form input[type="text"] {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+    padding-inline: 0.25rem;
+  }
+
+  form input[type="text"] {
+    font-size: 0.8rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+form span {
+  padding-left: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+form input[type="text"] {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+form input[type="text"]::placeholder {
+  color: #64748b;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: 1rem;
+  white-space: nowrap;
+
+  &:hover,
+  /* pseudo-clase que significa que el ratón está encima */
+  &:focus {
+    /* pseudo-clase que significa que el elemento tiene el foco */
+    background-color: var(--primary-hover);
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: scale(0.90)
+  }
+
+  &:disabled {
+    opacity: .5;
+    pointer-events: none;
+  }
+}
+
+/* Features Section */
+section>h2 {
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+main>section:nth-child(2) {
+  padding-inline: 2rem;
+  background-color: var(--background);
+  padding-top: 1.5rem;
+
+
+  &>header {
+    flex-direction: column;
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    p {
+      opacity: 0.75rem;
+    }
+  }
+
+}
+
+/* Grid de Features */
+main>section:nth-child(2) footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px
+}
+
+/* Media queries para grid */
+@media (max-width: 768px) {
+  main>section:nth-child(2) footer {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  main>section:nth-child(2) footer {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* Feature Cards */
+/* article {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  margin-bottom: 16px;
+  border-radius: 0.5rem;                   
+  box-shadow: 0px 1px 3px 0 var(--shadow); 
+
+  svg {
+    color: var(--primary-light);          
+    background: rgba(0, 153, 255, 0.3);  
+    border-radius: 9999px;               
+    width: 64px;                         
+    height: 64px;                        
+    padding: 16px;                       
+  }
+
+  h3 {
+    font-weight: 500;
+  }
+
+  p {
+    color: var(--text-muted);
+  }
+} */
+
+/* Footer */
+footer {
+  background-color: var(--background);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 16px;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: flex-start;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  small {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+}
+
+
+/* Jobs Search */
+.jobs-search {
+  margin: 0;
+  padding: 0;
+  height: auto !important;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: .25rem;
+  }
+
+  .search-bar {
+    background: var(--input-bg);
+    padding: .25rem .5rem;
+  }
+
+  .search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+  }
+
+  form {
+    width: 100%;
+    max-width: 1280px;
+  }
+
+  form div {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+
+/*aqui Arranca*/
+article {
+
+  gap: 1rem;
+  background-color: var(--card-bg);
+  padding: 1rem;
+  margin-bottom: 16px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+
+
+
+  svg {
+    margin-inline: auto;
+    align-self: center;
+    color: var(--primary-light);
+    background: rgba(0, 153, 255, .3);
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    padding: 16px;
+  }
+
+  p {
+    color: var(--text-muted);
+    font-size: 90%;
+    justify-items: center;
+    margin-inline: 30px;
+
+  }
+
+  h3 {
+
+    padding-bottom: 1rem;
+
+  }
+}
+
+
+
+.jobs-listings {
+  background-color: #71c3737c;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 0.5rem;
+
+  .jobs-listings-card {
+    background-color: var(--card-bg);
+    align-items: auto;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+
+    div {
+      padding-bottom: 1rem;
+      font-size: large;
+
+      /*margin parte inferior*/
+      margin-bottom: 0.5rem;
+    }
+
+    .button-apply-job {
+
+      background: #09f;
+      justify-content: end;
+
+      &.is-applied {
+        justify-content: baseline;
+        background: #4caf50;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+/* Media queries para jobs-listings */
+@media (max-width: 768px) {
+  .jobs-listings {
+    width: 90%;
+    padding: 0.25rem;
+
+    .jobs-listings-card {
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+
+      div {
+        font-size: medium;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .jobs-listings {
+    width: 95%;
+    padding: 0.125rem;
+
+    .jobs-listings-card {
+      padding: 0.5rem;
+      margin-bottom: 0.75rem;
+
+      div {
+        font-size: small;
+      }
+    }
+  }
+}
+
+/*aqui termina*/
+
+
+
+/*Arranca el modulo del Header*/
+/* ============================================ */
+/* ESTILOS BASE - Header */
+/* ============================================ */
+.Cabecera {
+    border-bottom: 1px solid var(--border);
+    background: var(--background);
+}
+
+
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+.logotipo {
+    color: var(--primary-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.btnHeader {
+    text-decoration: aliceblue;
+    color: aliceblue;
+}
+
+.tittleLogo {
+    color: #e7eee6f1;
+    text-decoration: none;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+.navigationA{
+    color: aliceblue;
+    pointer-events: auto;
+    text-decoration: none;
+}
+
+.navigationA:hover {
+    color: #5689e9;
+}
+
+
+
+/* ... (Estilos Base Menu Hamburguesa) ... */
+
+.menuToggle {
+    display: none; /* Oculto por defecto en Desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    z-index: 100; /* Alto z-index para que esté por encima del menú desplegado */
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.bar {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: aliceblue; 
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    transform-origin: 1px; 
+}
+
+/* Animación de 'X' */
+.bar:first-child.open { transform: rotate(45deg); }
+.bar:nth-child(2).open { opacity: 0; transform: translateX(20px); }
+.bar:last-child.open { transform: rotate(-45deg); }
+
+.cssbuttons {
+    height: 40px;
+    font-size: 15px;
+    width: 10rem;
+    position: relative;
+    cursor: pointer;
+    background: linear-gradient(to right, #48cf79, #1136ee);
+    color: rgb(243, 243, 243);
+    overflow: hidden;
+    border: none;
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease;
+}
+.cssbuttons span {
+    position: relative;
+    transition: color 0.4s;
+}
+
+.cssbuttons::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    background: #2663b37c;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    z-index: 0;
+}
+
+
+.cssbuttons:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+.cssbuttons:active {
+    transform: scale(0.95);
+}
+
+
+/* ============================================ */
+/* Media queries para Desktop (max-width: 2560px) */
+/* ============================================ */
+@media (max-width: 2560px) {
+    .Cabecera {
+    height: 10vh;
+    width: 100%;
+}
+
+.Header {
+    margin-left: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logotipo {
+    display: flex;
+    font-size: 2rem;
+    gap: 55px;
+    width: 13rem;
+    height: 2.8rem;
+    min-width: 12rem;
+    align-items: center;
+}
+
+.icon {
+    width: 3rem;
+    height: 3rem;
+    padding: auto;
+}
+
+.tittleLogo {
+    font-size: 2rem;
+}
+
+.navigation {
+    height: auto;
+    padding: 1.5rem;
+    width: 35rem;
+    display: flex;
+    gap: 3rem;
+}
+
+.btnHeader {
+    margin-right: 20px;
+    display: flex;
+    gap: 1rem;
+}
+
+  /* componente botton css */
+.cssbuttons {
+    height: 40px;
+    font-size: 15px;
+    width: 10rem;
+    position: relative;
+    cursor: pointer;
+    background: linear-gradient(to right, #48cf79, #1136ee);
+    color: rgb(243, 243, 243);
+    overflow: hidden;
+}
+
+.cssbuttons span {
+    position: relative;
+    transition: color 0.4s;
+}
+
+.cssbuttons::before,
+.cssbuttons::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+  .cssbuttons::before {
+    content: "";
+    background: #2663b37c;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+  }
+
+  .cssbuttons:hover::before {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .cssbuttons:active {
+    transform: scale(0.95);
+  }
+}
+
+/* ============================================ */
+/* Media queries para Tablet (max-width: 768px) */
+/* ============================================ */
+@media (max-width: 768px) {
+.Cabecera {
+    width: 100%;
+}
+
+.Header {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logotipo {
+    display: flex;
+    font-size: 1.5rem;
+    gap: 20px;
+    width: auto;
+    height: auto;
+    min-width: auto;
+    align-items: center;
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.tittleLogo {
+    font-size: 1.5rem;
+}
+
+.navigation {
+    height: auto;
+    padding: 1rem;
+    width: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.btnHeader {
+    margin-right: 10px;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.cssbuttons {
+    height: 35px;
+    font-size: 12px;
+    width: 8rem;
+}
+}
+
+/* ============================================ */
+/* Media queries para Mobile (max-width: 480px) */
+/* ============================================ */
+@media (max-width: 480px) {
+.Cabecera {
+    height: 25vh;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Header {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    flex-direction: column;
+    position: relative;
+}
+
+.menuToggle {
+        display: flex;
+        order: -1;
+        margin-left: 1rem;
+        margin-right: auto;
+    }
+
+.navigation {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 6rem;
+        gap: 0;
+        z-index: 99;
+    }
+.navigation.open {
+        display: flex;
+    }
+
+.navigationA {
+        text-align: left;
+        padding: 1.5rem 2rem;
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1.2rem;
+}
+.navigationA:hover {
+        background-color: rgba(70, 181, 255, 0.3);
+    }
+.btnHeader {
+        display: none;
+    }
+
+.logotipo {
+        font-size: 1.2rem;
+        gap: 0.5rem;
+    }
+
+.icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+.tittleLogo {
+    font-size: 3rem;
+}
+
+.btnHeader {
+        display:flex;
+}
+
+.cssbuttons {
+    height: 14px;
+    font-size: 10px;
+    width: 4rem;
+    
+}
+  /* componente botton css */
+.cssbuttons {
+    height: 40px;
+    font-size: 15px;
+    width: 10rem;
+    position: relative;
+    cursor: pointer;
+    background: linear-gradient(to right, #48cf79, #1136ee);
+    color: rgb(243, 243, 243);
+    overflow: hidden;
+}
+
+.cssbuttons span {
+    position: relative;
+    transition: color 0.4s;
+}
+
+.cssbuttons::before,
+.cssbuttons::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.cssbuttons::before {
+    content: "";
+    background: #2663b37c;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.cssbuttons:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+.cssbuttons:active {
+    transform: scale(0.95);
+    }
+}

@@ -1,8 +1,10 @@
 import backgroundFoto from "./images/background.webp"
+import styles from "./Menu.module.css"
+
 export default function Menu() {
     return (
-        <main>
-            <section>
+        <main className={styles.main}>
+            <section className={styles.section}>
                 <img src={backgroundFoto} />
 
                 <h1>Encuentra el trabajo de tus sueños</h1>
