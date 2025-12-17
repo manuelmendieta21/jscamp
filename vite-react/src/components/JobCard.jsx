@@ -1,6 +1,6 @@
 //mostrar los jobs empleos que tenemos reemplazando el fect para recorrer.
 import { useState } from "react";
-
+import style from "./JobCard.module.css"
 
 
 export default function JobCard({ job }) {
@@ -15,7 +15,7 @@ export default function JobCard({ job }) {
 
     return (
         <article
-            className="jobs-listings-card"
+            className={style.jobsListingsCard} 
             data-modalidad={job.modalidad}
             data-nivel={job.data.nivel}
             data-technology={job.data.technology}

@@ -1,14 +1,15 @@
+import style from "./Jobs.module.css"
 
 export default function Jobs() {
     return (
         <div>
             <main>
-                <section className="jobs-search">
+                <section className={style.jobsSearch}>
                     <h1>Encuentra tu próximo trabajo</h1>
                     <p>Explora miles de oportunidades en el sector tecnológico.</p>
 
                     <form id="empleos-search-form" role="search">
-                        <div className="search-bar">
+                        <div className={style.searchBar}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"
                                 className="icon icon-tabler icons-tabler-outline icon-tabler-search">
@@ -20,7 +21,7 @@ export default function Jobs() {
                                 placeholder="Buscar trabajos, empresas o habilidades" />
                         </div>
 
-                        <div className="search-filters">
+                        <div className={style.searchFilters}>
                             <select name="technology" id="filter-technology">
                                 <option value="">Tecnología</option>
                                 <optgroup label="Tecnologías populares">

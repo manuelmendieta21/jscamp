@@ -1,0 +1,67 @@
+article {
+    gap: 1rem;
+    background-color: var(--card-bg);
+    padding: 1rem;
+    margin-bottom: 16px;
+    border-radius: 0.5rem;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    svg {
+        margin-inline: auto;
+        align-self: center;
+        color: var(--primary-light);
+        background: rgba(0, 153, 255, .3);
+        width: 64px;
+        height: 64px;
+        border-radius: 100%;
+        padding: 16px;
+    }
+    p {
+        color: var(--text-muted);
+        font-size: 90%;
+        justify-items: center;
+        margin-inline: 30px;
+    }
+    h3{
+        padding-bottom: 1rem;
+        }
+}
+
+.jobs-listings {
+    background-color: #71c3737c;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 0.5rem;
+
+.jobs-listings-card {
+    background-color: var(--card-bg);
+    align-items: auto;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+
+    div {
+        padding-bottom: 1rem;
+        font-size: large;
+
+        /*margin parte inferior*/
+        margin-bottom: 0.5rem;
+    }
+
+.button-apply-job {
+        background: #09f;
+        justify-content: end;
+
+    &.is-applied {
+        justify-content: baseline;
+        background: #4caf50;
+        pointer-events: none;
+        }
+        }
+    }
+}

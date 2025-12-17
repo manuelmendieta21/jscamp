@@ -1,0 +1,34 @@
+/* Jobs Search */
+.jobsSearch {
+    margin: 0;
+    padding: 30px;
+    height: auto !important;
+
+.h1 {
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+}
+
+
+.searchBar {
+    background: var(--input-bg);
+    padding:0.25rem 1.5rem;
+}
+
+.searchFilters {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+}
+
+form {
+    width: 100%;
+    max-width: 1280px;
+}
+
+form div {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    }
+}
