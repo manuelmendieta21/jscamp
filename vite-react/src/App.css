@@ -1,34 +1,10 @@
-body{
-  font-family: system-ui;
-  background-color: var(--background);
-  color: var(--text-primary);
-}
-
-@media (max-width: 2560px) {
+@layer base {
   body {
+    font-family: system-ui;
+    background-color: var(--background);
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
     line-height: 1.6;
   }
 }
-
-
-@media (max-width: 768px) {
-    body {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.6;
-  
-}
-}
-
-@media (max-width: 480px) {
-
-  body {
-    height: auto;
-    width: auto;
-    display: flex;
-    
-  }
-}
-
