@@ -16,11 +16,12 @@ export default function JobCard({ job }) {
 
     return (
         <article
-            className="flex flex-col gap-4 bg-card-bg p-4 mb-8 rounded-3xl shadow-[0px_1px_3px_0px_rgba(0,0,0,0.5)] max-md:p-3 max-md:mb-4 max-sm:p-2 max-sm:mb-3"
+            className="flex flex-col gap-4 bg-card-bg p-6 mb-6 rounded-3xl border border-white/5 shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-primary/10 hover:-translate-y-1 relative overflow-hidden group max-md:p-4"
             data-modalidad={job.modalidad}
             data-nivel={job.data.nivel}
             data-technology={job.data.technology}
         >
+            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-light/10 to-transparent rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
             <div className="pb-4 text-lg mb-2 max-md:text-base max-sm:text-sm">
                 <h3 className="pb-4 font-bold">{job.titulo}</h3>
                 <small className="text-text-muted text-sm">{job.empresa} | {job.ubicacion}</small>

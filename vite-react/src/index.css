@@ -1,14 +1,10 @@
-/* /src/App.css - versión corregida y responsive (mobile-first) */
+@import "tailwindcss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --primary: #3b4550;
